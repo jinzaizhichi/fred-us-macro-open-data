@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-04-23T18:42:10.035Z",
+  "upstreamGeneratedAt": "2026-04-22T02:57:23.654Z",
+  "upstreamSummary": {
+    "eventCount": 23170,
+    "failedSeries": 0,
+    "observationCount": 142461,
+    "seriesCount": 37
+  },
+  "repoPurpose": "Openly redistributable subset of U.S. macro history and replay-ready events sourced from FRED.",
+  "restrictedSeriesExcluded": [
+    {
+      "id": "UMCSENT",
+      "labelZh": "密歇根消费者信心"
+    },
+    {
+      "id": "BAMLH0A0HYM2",
+      "labelZh": "高收益信用利差"
+    },
+    {
+      "id": "MORTGAGE30US",
+      "labelZh": "30 年抵押贷款利率"
+    }
+  ],
+  "files": {
+    "history": "data/fred-us-macro-history.json",
+    "events": "data/fred-us-macro-events.json",
+    "catalog": "metadata/series-catalog.json",
+    "excludedSeries": "metadata/excluded-series.json"
+  },
+  "stats": {
+    "allowedSeries": 34,
+    "excludedSeries": 3,
+    "allowedObservations": 138133,
+    "allowedEvents": 21918,
+    "oldestObservation": "1913-01-01",
+    "oldestEvent": "2019-01-01T13:30:00.000Z",
+    "newestEvent": "2026-04-21T20:00:00.000Z"
+  }
+}
