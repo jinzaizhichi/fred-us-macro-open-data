@@ -1,62 +1,66 @@
-# FRED US Macro Open Data
+# FRED US Macro Core Data
 
-Open U.S. macro history and replay-ready event data sourced from FRED.
+Core U.S. macro history and replay-ready market event data sourced from FRED.
 
-This repository publishes a redistributable subset of the U.S. macro dataset we built for replay and event analysis. It includes:
-
-- full historical observations for the included FRED series
-- replay-ready macro event records derived from those series
-- a machine-readable series catalog
-- a list of excluded series with source notes
+This repository now publishes the high-impact P1 macro dataset used for market replay. The older broad dataset whose event coverage effectively started in 2019 has been removed and replaced with full available history for the selected core releases.
 
 ## What's inside
 
 - `data/fred-us-macro-history.json`
-  - full historical observations for the included series
+  - raw historical FRED observations for the included series
 - `data/fred-us-macro-events.json`
-  - replay-ready macro events derived from the same series
+  - replay-ready macro event records derived from the same series
 - `metadata/series-catalog.json`
-  - series metadata, categories, frequencies, units, and source URLs
-- `metadata/excluded-series.json`
-  - series excluded from this public repo because their source notes contain copyright or redistribution restrictions
+  - series metadata, transformed event value type, event counts, coverage, and source URLs
 - `metadata/dataset-metadata.json`
-  - generation metadata and dataset stats
+  - generation metadata, dataset stats, and scope notes
+- `metadata/excluded-series.json`
+  - known third-party FRED series that are not shipped because their notes include copyright or redistribution restrictions
 
 ## Current coverage
 
-As of the latest refresh in this repo:
+Latest refresh in this repository:
 
-- 34 redistributable series
-- 138,133 historical observations
-- 21,918 replay-ready events
+- 15 core high-impact series
+- 18,359 historical observations
+- 11,986 replay-ready events
 - oldest observation: 1913-01-01
-- oldest event: 2019-01-01T13:30:00.000Z
+- oldest event: 1914-01-01T13:30:00.000Z
+- newest event: 2026-04-23T12:30:00.000Z
+- 5,752 events with FRED vintage release dates
+- 6,234 older events with approximate release dates
 
-## Why some series are excluded
+## Included core series
 
-FRED's API terms make clear that some series are owned by third parties and may carry their own copyright or redistribution restrictions. We therefore exclude series whose source notes explicitly include copyright or distribution restrictions.
+| FRED ID | Event value | Market use |
+| --- | --- | --- |
+| `DFEDTARU` | Federal funds target upper limit | Fed policy rate changes |
+| `CPIAUCNS` | CPI year-over-year percent | Headline inflation |
+| `CPILFENS` | Core CPI year-over-year percent | Core inflation |
+| `PPIACO` | PPI year-over-year percent | Producer inflation |
+| `PCEPI` | PCE price index year-over-year percent | Fed-preferred inflation trend |
+| `PCEPILFE` | Core PCE year-over-year percent | Fed-preferred core inflation |
+| `UNRATE` | Unemployment rate level | Labor market slack |
+| `PAYEMS` | Nonfarm payroll monthly change | Employment growth |
+| `ADPMNUSNERSA` | ADP employment monthly change | Private payroll preview |
+| `CES0500000003` | Average hourly earnings month-over-month percent | Wage inflation |
+| `ICSA` | Initial jobless claims level | High-frequency labor stress |
+| `JTSJOL` | JOLTS job openings level | Labor demand |
+| `GDP` | Nominal GDP quarter-over-quarter annualized percent | Growth |
+| `GDPC1` | Real GDP quarter-over-quarter annualized percent | Real growth |
+| `RSAFS` | Retail sales month-over-month percent | Consumption demand |
 
-Currently excluded:
+`DFEDTARU` is a daily source series, but this dataset only emits replay events when the policy rate changes. The noisy one-observation-per-day event stream is intentionally not published.
 
-- `UMCSENT` - University of Michigan: Consumer Sentiment
-- `BAMLH0A0HYM2` - ICE BofA US High Yield Index Option-Adjusted Spread
-- `MORTGAGE30US` - 30-Year Fixed Rate Mortgage Average in the United States
+## Actual vs expected values
 
-See `metadata/excluded-series.json` for the full notes and source URLs.
-
-## Attribution
-
-This dataset is sourced from FRED and the original data owners behind each series. When displaying or redistributing derived views, please keep source attribution. A safe default is:
-
-`Source: Original series owner via FRED, Federal Reserve Bank of St. Louis`
-
-For series-specific source URLs, see `metadata/series-catalog.json`.
+FRED provides observations and vintage/release metadata for these series, but it does not provide consensus forecast or expected-value fields. Event records therefore include actual values, previous values, changes, percentage changes, raw FRED observations, and release-date metadata. Forecast surprises can be added later only from a separate licensed or self-maintained expectations source.
 
 ## Data format
 
 ### History
 
-`data/fred-us-macro-history.json` contains:
+`data/fred-us-macro-history.json` contains raw FRED observation history:
 
 - `generatedAt`
 - `historyStart`
@@ -67,6 +71,7 @@ For series-specific source URLs, see `metadata/series-catalog.json`.
   - `id`
   - `label`
   - `labelZh`
+  - `title`
   - `category`
   - `frequency`
   - `frequencyShort`
@@ -81,7 +86,7 @@ For series-specific source URLs, see `metadata/series-catalog.json`.
 
 ### Events
 
-`data/fred-us-macro-events.json` contains:
+`data/fred-us-macro-events.json` contains replay-ready records sorted newest first:
 
 - `generatedAt`
 - `sourceId`
@@ -92,20 +97,39 @@ For series-specific source URLs, see `metadata/series-catalog.json`.
   - `createdAt`
   - `primaryCategory`
   - `text`
+  - `textEn`
   - `textZh`
   - `url`
   - `metadata`
     - `seriesId`
     - `observationDate`
     - `releaseDate`
+    - `releaseDateApproximate`
+    - `rawValue`
     - `value`
+    - `valueKind`
+    - `valueUnit`
     - `previousValue`
     - `change`
     - `pctChange`
 
+For transformed event series, `metadata.value` is the market-facing actual value used in replay. For example, CPI/PCE/PPI events use year-over-year percent, payroll events use period change, GDP events use annualized quarter-over-quarter percent, and `metadata.rawValue` preserves the original FRED observation.
+
+## Release-date caveat
+
+Where FRED vintage dates are available, event timestamps use those release dates with a market-standard release time. Older observations often do not have vintage release dates in FRED. Those records are still useful for long-run replay context, but they are marked with `metadata.releaseDateApproximate: true`.
+
+## Attribution
+
+This dataset is sourced from FRED and the original data owners behind each series. When displaying or redistributing derived views, please keep source attribution. A safe default is:
+
+`Source: Original series owner via FRED, Federal Reserve Bank of St. Louis`
+
+For series-specific source URLs, see `metadata/series-catalog.json`.
+
 ## Important note
 
-This repository publishes a redistributable subset prepared from FRED data and excludes series with explicit redistribution restrictions that we detected in source notes. You are still responsible for checking the original source terms for your own use case.
+This repository is a focused core macro dataset, not a complete mirror of FRED. You are still responsible for checking the original source terms for your own use case.
 
 ## Upstream references
 
