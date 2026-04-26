@@ -52,7 +52,7 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 733,
     "consensusEventLabel": "US CPI YoY",
-    "consensusMatchedEvents": 258,
+    "consensusMatchedEvents": 255,
     "consensusForecastEvents": 167,
     "consensusFirstForecastObservation": "2012-04-01",
     "consensusLastForecastObservation": "2026-03-01"
@@ -81,7 +81,7 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 736,
     "consensusEventLabel": "US Core CPI YoY",
-    "consensusMatchedEvents": 578,
+    "consensusMatchedEvents": 255,
     "consensusForecastEvents": 167,
     "consensusFirstForecastObservation": "2012-04-01",
     "consensusLastForecastObservation": "2026-03-01"
@@ -111,7 +111,7 @@
     "consensusEventId": 734,
     "consensusEventLabel": "US PPI YoY",
     "consensusMatchedEvents": 168,
-    "consensusForecastEvents": 168,
+    "consensusForecastEvents": 167,
     "consensusFirstForecastObservation": "2012-04-01",
     "consensusLastForecastObservation": "2026-03-01"
   },
@@ -140,7 +140,7 @@
     "consensusEventId": 906,
     "consensusEventLabel": "US PCE Price Index YoY",
     "consensusMatchedEvents": 80,
-    "consensusForecastEvents": 39,
+    "consensusForecastEvents": 40,
     "consensusFirstForecastObservation": "2019-10-01",
     "consensusLastForecastObservation": "2026-02-01"
   },
@@ -168,8 +168,8 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 905,
     "consensusEventLabel": "US Core PCE Price Index YoY",
-    "consensusMatchedEvents": 580,
-    "consensusForecastEvents": 129,
+    "consensusMatchedEvents": 140,
+    "consensusForecastEvents": 130,
     "consensusFirstForecastObservation": "2014-10-01",
     "consensusLastForecastObservation": "2026-02-01"
   },
@@ -227,7 +227,7 @@
     "consensusEventId": 227,
     "consensusEventLabel": "US Nonfarm Payrolls",
     "consensusMatchedEvents": 627,
-    "consensusForecastEvents": 218,
+    "consensusForecastEvents": 217,
     "consensusFirstForecastObservation": "2008-02-01",
     "consensusLastForecastObservation": "2026-03-01"
   },
@@ -255,8 +255,8 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 1,
     "consensusEventLabel": "US ADP Employment Change",
-    "consensusMatchedEvents": 98,
-    "consensusForecastEvents": 98,
+    "consensusMatchedEvents": 64,
+    "consensusForecastEvents": 64,
     "consensusFirstForecastObservation": "2010-04-01",
     "consensusLastForecastObservation": "2026-03-01"
   },
@@ -284,8 +284,8 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 8,
     "consensusEventLabel": "US Average Hourly Earnings MoM",
-    "consensusMatchedEvents": 209,
-    "consensusForecastEvents": 186,
+    "consensusMatchedEvents": 187,
+    "consensusForecastEvents": 185,
     "consensusFirstForecastObservation": "2008-05-01",
     "consensusLastForecastObservation": "2026-03-01"
   },
@@ -313,8 +313,8 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 294,
     "consensusEventLabel": "US Initial Jobless Claims",
-    "consensusMatchedEvents": 1077,
-    "consensusForecastEvents": 874,
+    "consensusMatchedEvents": 945,
+    "consensusForecastEvents": 875,
     "consensusFirstForecastObservation": "2009-05-30",
     "consensusLastForecastObservation": "2026-04-18"
   },
@@ -342,8 +342,8 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 1057,
     "consensusEventLabel": "US JOLTS Job Openings",
-    "consensusMatchedEvents": 267,
-    "consensusForecastEvents": 150,
+    "consensusMatchedEvents": 152,
+    "consensusForecastEvents": 148,
     "consensusFirstForecastObservation": "2013-06-01",
     "consensusLastForecastObservation": "2026-02-01"
   },
@@ -429,7 +429,7 @@
     "consensusSourceLabel": "Investing.com Economic Calendar",
     "consensusEventId": 256,
     "consensusEventLabel": "US Retail Sales MoM",
-    "consensusMatchedEvents": 329,
+    "consensusMatchedEvents": 218,
     "consensusForecastEvents": 218,
     "consensusFirstForecastObservation": "2008-01-01",
     "consensusLastForecastObservation": "2026-03-01"

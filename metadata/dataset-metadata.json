@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T03:54:14.015Z",
+  "generatedAt": "2026-04-26T09:02:08.047Z",
   "upstreamGeneratedAt": "2026-04-24T16:29:43.477Z",
   "upstreamEventGeneratedAt": "2026-04-25T03:54:14.015Z",
   "repoPurpose": "Core high-impact U.S. macro history and replay-ready market event data sourced from FRED.",
@@ -7,7 +7,7 @@
     "selection": "P1 market-moving macro indicators only",
     "policy": "The older broad 2019-start event slice has been replaced with full available history for the selected core series.",
     "forecastData": "Consensus actual / forecast / previous values are enriched from Investing.com Economic Calendar occurrences where matching history exists. FRED remains the observation and release-date source of record.",
-    "forecastCoverage": "Forecast coverage is partial and varies by series/year; missing forecasts are stored as null, not zero."
+    "forecastCoverage": "Forecast coverage is partial and varies by series/year; Investing rows are matched by release-time proximity plus reference-period month/quarter alignment. Missing forecasts are stored as null, not zero."
   },
   "files": {
     "history": "data/fred-us-macro-history.json",
@@ -33,10 +33,10 @@
       "macro_labor": 6,
       "macro_growth": 3
     },
-    "consensusActualEvents": 4682,
-    "consensusEnrichedEvents": 4682,
-    "consensusForecastEvents": 2728,
-    "consensusPreviousEvents": 4682,
+    "consensusActualEvents": 3502,
+    "consensusEnrichedEvents": 3502,
+    "consensusForecastEvents": 2692,
+    "consensusPreviousEvents": 3502,
     "consensusSeriesCount": 14,
     "forecastSeriesCount": 14,
     "consensusSourceId": "investing-economic-calendar",
@@ -66,7 +66,7 @@
       "firstEvent": "1914-01-01T13:30:00.000Z",
       "lastEvent": "2026-04-10T12:30:00.000Z",
       "consensusEventId": 733,
-      "consensusEvents": 258,
+      "consensusEvents": 255,
       "forecastEvents": 167,
       "firstForecastObservation": "2012-04-01",
       "lastForecastObservation": "2026-03-01"
@@ -79,7 +79,7 @@
       "firstEvent": "1958-01-01T13:30:00.000Z",
       "lastEvent": "2026-04-10T12:30:00.000Z",
       "consensusEventId": 736,
-      "consensusEvents": 578,
+      "consensusEvents": 255,
       "forecastEvents": 167,
       "firstForecastObservation": "2012-04-01",
       "lastForecastObservation": "2026-03-01"
@@ -93,7 +93,7 @@
       "lastEvent": "2026-04-14T12:30:00.000Z",
       "consensusEventId": 734,
       "consensusEvents": 168,
-      "forecastEvents": 168,
+      "forecastEvents": 167,
       "firstForecastObservation": "2012-04-01",
       "lastForecastObservation": "2026-03-01"
     },
@@ -106,7 +106,7 @@
       "lastEvent": "2026-04-09T12:30:00.000Z",
       "consensusEventId": 906,
       "consensusEvents": 80,
-      "forecastEvents": 39,
+      "forecastEvents": 40,
       "firstForecastObservation": "2019-10-01",
       "lastForecastObservation": "2026-02-01"
     },
@@ -118,8 +118,8 @@
       "firstEvent": "1960-01-01T13:30:00.000Z",
       "lastEvent": "2026-04-09T12:30:00.000Z",
       "consensusEventId": 905,
-      "consensusEvents": 580,
-      "forecastEvents": 129,
+      "consensusEvents": 140,
+      "forecastEvents": 130,
       "firstForecastObservation": "2014-10-01",
       "lastForecastObservation": "2026-02-01"
     },
@@ -145,7 +145,7 @@
       "lastEvent": "2026-04-03T12:30:00.000Z",
       "consensusEventId": 227,
       "consensusEvents": 627,
-      "forecastEvents": 218,
+      "forecastEvents": 217,
       "firstForecastObservation": "2008-02-01",
       "lastForecastObservation": "2026-03-01"
     },
@@ -157,8 +157,8 @@
       "firstEvent": "2010-02-01T13:15:00.000Z",
       "lastEvent": "2026-04-01T12:15:00.000Z",
       "consensusEventId": 1,
-      "consensusEvents": 98,
-      "forecastEvents": 98,
+      "consensusEvents": 64,
+      "forecastEvents": 64,
       "firstForecastObservation": "2010-04-01",
       "lastForecastObservation": "2026-03-01"
     },
@@ -170,8 +170,8 @@
       "firstEvent": "2006-04-01T13:30:00.000Z",
       "lastEvent": "2026-04-03T12:30:00.000Z",
       "consensusEventId": 8,
-      "consensusEvents": 209,
-      "forecastEvents": 186,
+      "consensusEvents": 187,
+      "forecastEvents": 185,
       "firstForecastObservation": "2008-05-01",
       "lastForecastObservation": "2026-03-01"
     },
@@ -183,8 +183,8 @@
       "firstEvent": "1967-01-07T13:30:00.000Z",
       "lastEvent": "2026-04-23T12:30:00.000Z",
       "consensusEventId": 294,
-      "consensusEvents": 1077,
-      "forecastEvents": 874,
+      "consensusEvents": 945,
+      "forecastEvents": 875,
       "firstForecastObservation": "2009-05-30",
       "lastForecastObservation": "2026-04-18"
     },
@@ -196,8 +196,8 @@
       "firstEvent": "2000-12-01T15:00:00.000Z",
       "lastEvent": "2026-03-31T14:00:00.000Z",
       "consensusEventId": 1057,
-      "consensusEvents": 267,
-      "forecastEvents": 150,
+      "consensusEvents": 152,
+      "forecastEvents": 148,
       "firstForecastObservation": "2013-06-01",
       "lastForecastObservation": "2026-02-01"
     },
@@ -235,7 +235,7 @@
       "firstEvent": "1992-02-01T13:30:00.000Z",
       "lastEvent": "2026-04-21T12:30:00.000Z",
       "consensusEventId": 256,
-      "consensusEvents": 329,
+      "consensusEvents": 218,
       "forecastEvents": 218,
       "firstForecastObservation": "2008-01-01",
       "lastForecastObservation": "2026-03-01"

@@ -3,7 +3,7 @@
   "sourceId": "investing-economic-calendar",
   "sourceLabel": "Investing.com Economic Calendar",
   "stats": {
-    "enrichedCount": 4682,
+    "enrichedCount": 3502,
     "failureCount": 0,
     "mappingCount": 14,
     "occurrenceCount": 6834
@@ -4703,7 +4703,7 @@
       },
       "eventId": 733,
       "label": "US CPI YoY",
-      "matchedCount": 258,
+      "matchedCount": 255,
       "occurrenceCount": 676,
       "occurrences": [
         {
@@ -14868,7 +14868,7 @@
       },
       "eventId": 736,
       "label": "US Core CPI YoY",
-      "matchedCount": 578,
+      "matchedCount": 255,
       "occurrenceCount": 676,
       "occurrences": [
         {
@@ -29073,7 +29073,7 @@
       },
       "eventId": 905,
       "label": "US Core PCE Price Index YoY",
-      "matchedCount": 580,
+      "matchedCount": 140,
       "occurrenceCount": 676,
       "occurrences": [
         {
@@ -59580,7 +59580,7 @@
       },
       "eventId": 1,
       "label": "US ADP Employment Change",
-      "matchedCount": 98,
+      "matchedCount": 64,
       "occurrenceCount": 298,
       "occurrences": [
         {
@@ -64075,7 +64075,7 @@
       },
       "eventId": 8,
       "label": "US Average Hourly Earnings MoM",
-      "matchedCount": 209,
+      "matchedCount": 187,
       "occurrenceCount": 241,
       "occurrences": [
         {
@@ -67714,7 +67714,7 @@
       },
       "eventId": 294,
       "label": "US Initial Jobless Claims",
-      "matchedCount": 1077,
+      "matchedCount": 945,
       "occurrenceCount": 1407,
       "occurrences": [
         {
@@ -88843,7 +88843,7 @@
       },
       "eventId": 1057,
       "label": "US JOLTS Job Openings",
-      "matchedCount": 267,
+      "matchedCount": 152,
       "occurrenceCount": 305,
       "occurrences": [
         {
@@ -96708,7 +96708,7 @@
       },
       "eventId": 256,
       "label": "US Retail Sales MoM",
-      "matchedCount": 329,
+      "matchedCount": 218,
       "occurrenceCount": 410,
       "occurrences": [
         {

@@ -33,8 +33,8 @@ Latest refresh in this repository:
 - newest event: 2026-04-23T12:30:00.000Z
 - 5,752 events with FRED vintage release dates
 - 6,234 older events with approximate release dates
-- 4,682 events enriched with Investing.com consensus actual / previous values
-- 2,728 events with explicit consensus forecast values
+- 3,502 events enriched with Investing.com consensus actual / previous values
+- 2,692 events with explicit consensus forecast values
 - 14 of 15 shipped series have some forecast coverage; `GDP` currently has no matched forecast series
 
 ## Included core series
@@ -73,27 +73,27 @@ When available, event records include:
 - `metadata.consensus.sourceId = investing-economic-calendar`
 - `metadata.consensus.sourceUrl`
 
-Coverage is partial and varies by series and year. Missing forecasts are stored as `null`, not `0`. Older rows may have actual / previous values but no forecast.
+Coverage is partial and varies by series and year. Matching uses release-time proximity plus Investing.com reference-period month/quarter alignment, so delayed multi-month release days are kept distinct. Missing forecasts are stored as `null`, not `0`. Older rows may have actual / previous values but no forecast.
 
 ### Consensus forecast coverage
 
 | FRED ID | Release | Consensus-matched events | Events with forecast | First forecast observation | Latest forecast observation |
 | --- | --- | ---: | ---: | --- | --- |
 | `DFEDTARU` | Fed funds target upper limit | 32 | 30 | 2008-12-16 | 2025-12-11 |
-| `CPIAUCNS` | Headline CPI YoY | 258 | 167 | 2012-04-01 | 2026-03-01 |
-| `CPILFENS` | Core CPI YoY | 578 | 167 | 2012-04-01 | 2026-03-01 |
-| `PPIACO` | PPI YoY | 168 | 168 | 2012-04-01 | 2026-03-01 |
-| `PCEPI` | PCE Price Index YoY | 80 | 39 | 2019-10-01 | 2026-02-01 |
-| `PCEPILFE` | Core PCE Price Index YoY | 580 | 129 | 2014-10-01 | 2026-02-01 |
+| `CPIAUCNS` | Headline CPI YoY | 255 | 167 | 2012-04-01 | 2026-03-01 |
+| `CPILFENS` | Core CPI YoY | 255 | 167 | 2012-04-01 | 2026-03-01 |
+| `PPIACO` | PPI YoY | 168 | 167 | 2012-04-01 | 2026-03-01 |
+| `PCEPI` | PCE Price Index YoY | 80 | 40 | 2019-10-01 | 2026-02-01 |
+| `PCEPILFE` | Core PCE Price Index YoY | 140 | 130 | 2014-10-01 | 2026-02-01 |
 | `UNRATE` | Unemployment Rate | 307 | 212 | 2008-07-01 | 2026-03-01 |
-| `PAYEMS` | Nonfarm Payrolls | 627 | 218 | 2008-02-01 | 2026-03-01 |
-| `ADPMNUSNERSA` | ADP Employment Change | 98 | 98 | 2010-04-01 | 2026-03-01 |
-| `CES0500000003` | Avg Hourly Earnings MoM | 209 | 186 | 2008-05-01 | 2026-03-01 |
-| `ICSA` | Initial Jobless Claims | 1,077 | 874 | 2009-05-30 | 2026-04-18 |
-| `JTSJOL` | JOLTS Job Openings | 267 | 150 | 2013-06-01 | 2026-02-01 |
+| `PAYEMS` | Nonfarm Payrolls | 627 | 217 | 2008-02-01 | 2026-03-01 |
+| `ADPMNUSNERSA` | ADP Employment Change | 64 | 64 | 2010-04-01 | 2026-03-01 |
+| `CES0500000003` | Avg Hourly Earnings MoM | 187 | 185 | 2008-05-01 | 2026-03-01 |
+| `ICSA` | Initial Jobless Claims | 945 | 875 | 2009-05-30 | 2026-04-18 |
+| `JTSJOL` | JOLTS Job Openings | 152 | 148 | 2013-06-01 | 2026-02-01 |
 | `GDP` | Nominal GDP QoQ annualized | 0 | 0 | - | - |
 | `GDPC1` | Real GDP QoQ annualized | 72 | 72 | 2008-01-01 | 2025-10-01 |
-| `RSAFS` | Retail Sales MoM | 329 | 218 | 2008-01-01 | 2026-03-01 |
+| `RSAFS` | Retail Sales MoM | 218 | 218 | 2008-01-01 | 2026-03-01 |
 
 ## Data format
 
